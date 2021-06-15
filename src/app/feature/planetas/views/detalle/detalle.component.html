@@ -1,0 +1,41 @@
+<h1>Detalle del planeta</h1>
+<div *ngIf="planeta$ | async as planeta">
+  <div class="grid grid-cols-6 gap-4 mt-8">
+    <div>
+      <p class="font-bold">Nombre</p>
+      <p>{{ planeta.nombre }}</p>
+    </div>
+    <div>
+      <p class="font-bold">Período de rotación</p>
+      <p>{{ planeta.periodoRotacion }}</p>
+    </div>
+    <div>
+      <p class="font-bold">Diámetro</p>
+      <p>{{ planeta.diametro }}</p>
+    </div>
+    <div>
+      <p class="font-bold">Terreno</p>
+      <p>{{ planeta.terreno }}</p>
+    </div>
+    <div>
+      <p class="font-bold">Clima</p>
+      <p>{{ planeta.clima }}</p>
+    </div>
+    <div>
+      <p class="font-bold">Cantidad de Visistas</p>
+      <p>{{ planeta.cantidadVisitas }}</p>
+    </div>
+  </div>
+  <div class="mt-6">
+    <p class="font-bold">Personas en el planeta</p>
+    <mat-list>
+      <mat-list-item *ngFor="let persona of planeta.personas"> {{ persona }} </mat-list-item>
+    </mat-list>
+  </div>
+  <div class="mt-8">
+    <button mat-flat-button color="primary" (click)="manejarBotonVolver()">
+      <mat-icon>arrow_back</mat-icon> Volver
+    </button>
+  </div>
+</div>
+

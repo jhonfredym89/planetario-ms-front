@@ -1,0 +1,21 @@
+<h1>Listado de personas</h1>
+<table *ngIf="personas$ | async as personas" mat-table [dataSource]="personas" class="mat-elevation-z8 w-full">
+  <ng-container matColumnDef="numeroIdentificacion">
+    <th mat-header-cell *matHeaderCellDef> ID </th>
+    <td mat-cell *matCellDef="let element"> {{element.numeroIdentificacion}} </td>
+  </ng-container>
+  <ng-container matColumnDef="persona">
+    <th mat-header-cell *matHeaderCellDef> Nombre </th>
+    <td mat-cell *matCellDef="let element"> {{element.persona}} </td>
+  </ng-container>
+  <ng-container matColumnDef="planeta">
+    <th mat-header-cell *matHeaderCellDef> Planeta </th>
+    <td mat-cell *matCellDef="let element"> {{element.planeta}} </td>
+  </ng-container>
+  <ng-container matColumnDef="cantidadVisitas">
+    <th mat-header-cell *matHeaderCellDef> # Visitas </th>
+    <td mat-cell *matCellDef="let element"> {{element.cantidadVisitas}} </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="camposAVisualizar"></tr>
+  <tr class="cursor-pointer" mat-row *matRowDef="let row; columns: camposAVisualizar;" (click)="manejarClickEnFila(row)"></tr>
+</table>

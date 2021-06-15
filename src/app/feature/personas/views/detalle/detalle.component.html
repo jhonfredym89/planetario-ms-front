@@ -1,0 +1,48 @@
+<h1>Detalle de la persona</h1>
+<div *ngIf="persona$ | async as persona">
+  <div class="grid grid-cols-6 gap-4 mt-8">
+    <div>
+      <p class="font-bold">Número de identificación</p>
+      <p>{{ persona.numeroIdentificacion }}</p>
+    </div>
+    <div>
+      <p class="font-bold">Nombre</p>
+      <p>{{ persona.nombre }}</p>
+    </div>
+    <div>
+      <p class="font-bold">Genero</p>
+      <p>{{ persona.genero }}</p>
+    </div>
+    <div>
+      <p class="font-bold">Fecha Nacimiento</p>
+      <p>{{ persona.edad }}</p>
+    </div>
+    <div>
+      <p class="font-bold">Fecha Nacimiento</p>
+      <p>{{ persona.fechaNacimiento| date:'dd MMM yyyy' }}</p>
+    </div>
+    <div>
+      <p class="font-bold">Estatura</p>
+      <p>{{ persona.estatura }}</p>
+    </div>
+    <div>
+      <p class="font-bold">Peso</p>
+      <p>{{ persona.peso }}</p>
+    </div>
+    <div>
+      <p class="font-bold">Planeta</p>
+      <p>{{ persona.planeta }}</p>
+    </div>
+    <div>
+      <p class="font-bold">Cantidad de visitas</p>
+      <p>{{ persona.cantidadVisitas }}</p>
+    </div>
+  </div>
+  <div class="mt-8">
+    <button mat-flat-button color="primary" (click)="manejarBotonVolver()">
+      <mat-icon>arrow_back</mat-icon> Volver
+    </button>
+  </div>
+</div>
+
+

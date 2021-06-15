@@ -1,0 +1,18 @@
+<h1>Top de planetas</h1>
+<table *ngIf="topPlanetas$ | async as planetas" mat-table [dataSource]="planetas" class="mat-elevation-z8 w-full">
+  <ng-container matColumnDef="planeta">
+    <th mat-header-cell *matHeaderCellDef> Planeta </th>
+    <td class="listado-row" mat-cell *matCellDef="let element"> {{ element.planeta }} </td>
+  </ng-container>
+  <ng-container matColumnDef="cantidadVisitas">
+    <th mat-header-cell *matHeaderCellDef> # de visitas </th>
+    <td class="listado-row" mat-cell *matCellDef="let element"> {{element.cantidadVisitas}} </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="camposAVisualizar"></tr>
+  <tr class="cursor-pointer" mat-row *matRowDef="let row; columns: camposAVisualizar;"></tr>
+</table>
+<div class="mt-8">
+  <button mat-flat-button color="primary" (click)="manejarBotonVolver()">
+    <mat-icon>arrow_back</mat-icon> Volver
+  </button>
+</div>
